@@ -1,0 +1,44 @@
+grocerly/                       # root
+├─ backend/
+│  ├─ app/
+│  │  ├─ main.py                 # FastAPI app factory
+│  │  ├─ api/
+│  │  │  ├─ v1/
+│  │  │  │  ├─ auth.py
+│  │  │  │  ├─ users.py
+│  │  │  │  ├─ menus.py
+│  │  │  │  └─ prices.py
+│  │  ├─ core/
+│  │  │  ├─ config.py            # pydantic settings
+│  │  │  └─ security.py
+│  │  ├─ db/
+│  │  │  ├─ base.py              # SQLAlchemy base
+│  │  │  ├─ models.py
+│  │  │  └─ session.py
+│  │  ├─ schemas/                # Pydantic models
+│  │  ├─ services/               # business logic
+│  │  ├─ workers/                # background workers (kafka consumers)
+│  │  ├─ integrations/
+│  │  │  ├─ openai_client.py
+│  │  │  └─ store_apis.py
+│  │  └─ tests/
+│  │     ├─ unit/
+│  │     └─ integration/
+│  ├─ Dockerfile
+│  └─ alembic/
+├─ worker/                       # optional separate worker image
+│  ├─ app/
+│  └─ Dockerfile
+├─ frontend/
+│  ├─ src/
+│  │  ├─ pages/
+│  │  └─ components/
+│  ├─ Dockerfile
+│  └─ package.json
+├─ infra/
+│  ├─ k8s/                       # kubernetes manifests or helm charts
+│  ├─ helm/
+│  └─ terraform/                 # (optional) for managed infra
+├─ .github/workflows/             # CI/CD pipelines
+├─ docker-compose.yaml           # dev convenience
+└─ README.md

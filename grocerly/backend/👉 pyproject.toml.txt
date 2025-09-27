@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "grocerly-backend"
+version = "0.1.0"
+description = "Backend for the Grocerly app - grocery shopping and meal planning assistant."
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false  # Poetry 1.6+ (don’t force src layout unless you want it)
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+# Web framework
+fastapi = "^0.115.0"
+uvicorn = {extras = ["standard"], version = "^0.30.0"}
+
+# Data validation
+pydantic = "^2.9.0"
+pydantic-settings = "^2.4.0"
+
+# Database & ORM
+sqlalchemy = "^2.0.34"
+alembic = "^1.13.2"
+psycopg2-binary = "^2.9.9"
+
+# Async HTTP clients
+httpx = "^0.27.2"
+
+# Kafka
+aiokafka = "^0.10.0"
+confluent-kafka = "^2.6.0"  # optional, faster producer/consumer
+
+# OpenAI API
+openai = "^1.46.0"
+
+# Background tasks (optional)
+celery = "^5.4.0"
+redis = "^5.1.0"
+
+# Auth & secu
